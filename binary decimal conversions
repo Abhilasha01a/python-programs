@@ -1,0 +1,26 @@
+# this is the program first takes decimal input and then it is converted to binary,
+#in binary the even positions value get changed and then again the reult of it is converted back to decimal
+
+def DecimalToBinary(num):
+	return bin(num).replace("0b","")
+
+def BinaryToDecimal(n):
+    return int(n,2)
+ 
+def change_even_pos(bin):
+    bin_list=list(bin)
+    for i in range(len(bin)):
+        if(i%2==0):
+            bin_list[i]='1' if bin_list[i]=='0' else '0'
+    res=''.join(bin_list)        
+    return res      
+    
+    
+dec_val = 24
+bin =DecimalToBinary(dec_val)
+print(bin)
+bin=change_even_pos(bin)
+print(bin)            
+res=BinaryToDecimal(bin)    
+print(res)
+
