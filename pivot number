@@ -1,0 +1,13 @@
+//to print the number which is middle where left and right number will be having same sum ,total n numbers will be given
+suml=0
+n=8
+ans=0
+sumr=n*(n+1)/2
+
+for i in range(1,n+1):
+    suml+=i
+    if(suml==sumr):
+        print(i)
+        break
+    sumr-=i
+        
