@@ -1,0 +1,19 @@
+to find lexicographically smallest string that is obtained by replacing each charater to its previous character of the english alphabet .!!!!
+
+def func( s):
+    s=list(s)
+    replaced=False
+    for i in range(len(s)):
+        if s[i]!='a':
+            while i<len(s) and s[i]!='a':
+                s[i]=chr(ord(s[i])-1)
+                i+=1
+            replaced=True
+            break
+    if not replaced:
+        s[-1]='z'
+    
+    return ''.join(s)
+
+s="hackerrank"
+print(func(s))
