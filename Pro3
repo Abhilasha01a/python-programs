@@ -1,0 +1,17 @@
+To return the latest verision of file if it is correct formate else -1 
+
+import re
+def func(s):
+    ans=-1
+    for i in s:
+        match=(re.match(r'^File_(\d+)$',i))
+        if(match):
+            res=int(match.group(1))
+            if(res>ans):
+                ans=res
+        
+    return ans
+    
+    
+S=["File_1","File_2","File_3"] 
+print(func(S))
