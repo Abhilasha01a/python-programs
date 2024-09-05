@@ -1,0 +1,26 @@
+to find number of networks can be formed without overlapping and should be having atleast minComps and more than threshold speed
+
+def func(speeds,minComps,speedThreshold):
+    n=len(speeds)
+    totalComs=0
+    totalThresh=0
+    res=0
+    i=0
+    while(i<n):
+        
+        for j in range(i,n):
+            totalComs+=1
+            totalThresh+=speeds[j]
+            if(totalThresh>speedThreshold) and (totalComs>minComps):
+                res+=1
+                break;
+            j+=1
+        i=j+1
+        totalComs=0
+        totalThresh=0
+    return res    
+
+s=[5, 7, 9, 12, 10, 13]
+minComps=2
+speedThreshold=15
+print(func(s,minComps,speedThreshold))
