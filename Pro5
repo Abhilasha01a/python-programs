@@ -1,0 +1,32 @@
+ The function accept positive integer n and num Implement the function to calculate the
+ n-base equivalent of num and return the same as a string
+ Steps:
+ 1. Divide the decimal number by n, Treat the division as the integer division
+ 2. Write the the remainder (in n-base notation)
+ 3. Divide the quotient again by n, Treat the division as integer division
+ 4. Repeat step 2 and 3 until the quotient is 0
+ 5. The n-base value is the sequence of the remainders from last to first
+
+
+def func(n,num):
+    b=[]
+    a=num
+    while(a!=0):
+        rem=a%n
+        a=a//n
+        b.append(rem)
+
+    b=b[::-1]
+    equ=''
+    for i in b:
+        if i >9:
+            c=i-9
+            c=64+c
+            equ+=chr(c)
+        else:
+            equ+=str(i)
+    return equ
+n= 12
+num= 718
+print(func(n,num))
+        
