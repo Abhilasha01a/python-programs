@@ -1,0 +1,22 @@
+ The function accepts an integer sum and an integer array arr of size n. Implement the function
+ to find the pair, (arr[j], arr[k]) where j!=k, Such that arr[j] and arr[k] are the least two
+ elements of array (arr[j] + arr[k] <= sum) and return the product of element of this pair
+ NOTE
+ ● Return-1 if array is empty or if n<2
+ ● Return 0, if no such pairs found
+ ● Allcomputed values lie within integer range
+
+def func(arr,sum):
+    if(len(arr)<2 or len(arr)==0):
+        return -1
+    sorted(arr)
+    ans=arr[0]+arr[1]
+    if(ans<=sum):
+        return arr[0]*arr[1]
+    else:
+        return 0
+
+arr=[1,2,12,3,5]
+sum=9
+print(func(arr,sum))
+        
