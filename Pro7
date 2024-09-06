@@ -3,6 +3,8 @@ The function accepts two numbers ‘num1’ and ‘num2’ as its arguments. You
  ‘num1’ and ‘ num2’.
  Assumption: num1, num2>=0
 
+
+// for string
 def func(num1,num2):
     if(len(num1)>=len(num2)):
         l=len(num2)-1
@@ -21,5 +23,32 @@ def func(num1,num2):
     
 num1='199'
 num2='111'
+print(func(num1,num2))
+
+
+
+
+
+// for numbers
+
+def func(num1,num2):
+    carry=0
+    count=0
+    while(num1>0 or num2>0):
+        digit1=num1%10
+        digit2=num2%10
+        sum=digit1+digit2+carry
+        if(sum>9):
+            carry=1
+            count+=1
+        else:
+            carry=0
+        num1=num1//10
+        num2=num2//10
+    return count    
+    
+    
+num1=199
+num2=111
 print(func(num1,num2))
         
